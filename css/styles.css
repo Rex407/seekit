@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.item-card {
+    border: 1px solid #62707e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.in-range {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { background-color: #ffebee; }
+}
+
+.ping-btn:focus {
+    outline: 2px solid #034115bd;
+    outline-offset: 2px;
+}
+
+#map { z-index: 0; }
+
+@media (max-width: 576px) {
+    .item-card { font-size: 0.9rem; }
+    h2 { font-size: 1.5rem; }
+    #add-device-form .col-auto, #update-location-form .col-auto, #sim-update-form .col-auto { width: 100%; margin-bottom: 10px; }
+}
+
+.visually-hidden-focusable:not(:focus):not(:focus-within),
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
